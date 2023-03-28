@@ -1,24 +1,35 @@
 package GenericsUsage
 //1,2,3
-class StacksUsage[A]{
-  var list:List[A]=Nil;
-  def push(element:A):Unit={
+class StacksUsage[Generics]{
+  var list :List[Generics] = Nil;
+
+  /**
+   * pushes the element parameter to the stack
+   * @param element
+   */
+  def push(element:Generics): Unit = {
     list=element::list;
   }
 
-  def peek():A={
-    return list.head
+  /**
+   * gets the top most element
+   * @return
+   */
+  def peek():Generics={
+    return list.head;
   }
 
-  def pop():A={
-    val currentTop=list.head;
+  /**
+   * removes the top most element
+   * @return
+   */
+  def pop():Generics={
+    var currentTop=list.head;
     list=list.tail
-    return currentTop
+    return currentTop;
   }
 
 }
-
-
 object StackImpl {
   def main(args:Array[String]):Unit={
     val stack = new StacksUsage[Int];
